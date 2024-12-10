@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="Riok.Mapperly" Version="4.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
+    <PackageReference Include="System.Text.Encoding" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Business\Rmn.FinancialDataAnalysis.Business.csproj" />
+    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Migrations\Rmn.FinancialDataAnalysis.Migrations.csproj" />
+    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Repositories\Rmn.FinancialDataAnalysis.Repositories.csproj" />
+    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Services\Rmn.FinancialDataAnalysis.Services.csproj" />
+  </ItemGroup>
+
+</Project>
