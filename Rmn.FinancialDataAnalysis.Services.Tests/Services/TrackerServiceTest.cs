@@ -74,7 +74,6 @@ public class TrackerServiceTest
 
         result.Should().BeTrue();
     }
-
     
     private static Tracker GivenTrackerBuilder()
     {

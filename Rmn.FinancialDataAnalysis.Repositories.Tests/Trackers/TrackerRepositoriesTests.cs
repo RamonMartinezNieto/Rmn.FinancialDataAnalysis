@@ -22,7 +22,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     [Test]
     public async Task GetAllTrackers_WhenEmpty()
     {
-        IEnumerable<Tracker> result = await _repository.GetAll();
+        var result = await _repository.GetAll();
 
         result.Should().BeEmpty();
     }

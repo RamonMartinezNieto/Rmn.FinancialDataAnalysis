@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Org.BouncyCastle.Tls.Crypto.Impl.BC;
 
 namespace Rmn.FinancialDataAnalysis.Repositories.Trackers;
 
