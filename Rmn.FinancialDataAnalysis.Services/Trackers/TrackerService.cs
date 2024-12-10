@@ -23,4 +23,9 @@ public class TrackerService : ITrackerService
     {
         return await _repository.GetTrackerById(trackerId);
     }
+
+    public Guid Create(string name, string description, string expansionTracker)
+    {
+        return _repository.Create(name, description, expansionTracker).Id;
+    }
 }

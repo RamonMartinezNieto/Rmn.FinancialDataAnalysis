@@ -47,6 +47,17 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
         
         result.Should().BeEquivalentTo(tracker);
     }
+
+    [Test]
+    public async Task CreateTracker()
+    {
+        var tracker = await GivenTracker(TrackerContext);
+        
+        var result = _repository.Create(tracker.Name, tracker.Description, tracker.ExpansionTracker);
+
+        var trackerInDatabase = await _repository.GetTrackerById(result.Id);
+        trackerInDatabase.Should().BeEquivalentTo(result);
+    }
     
     private async Task<Tracker> GivenTracker(TrackerContext context)
     {

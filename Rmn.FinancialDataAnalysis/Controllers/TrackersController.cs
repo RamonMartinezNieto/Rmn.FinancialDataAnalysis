@@ -26,7 +26,13 @@ public class TrackersController : ControllerBase
     [HttpGet("Get")]
     public async Task<TrackerDto> Get(Guid trackerId)
     {
-        Tracker result = await _service.GetTrackersById(trackerId);
+        var result = await _service.GetTrackersById(trackerId);
         return _mapper.ToDto(result);
+    }
+
+    [HttpPost("Create")]
+    public async Task<Guid> Create([FromBody] CreateTrackerDto createTrackerDto)
+    {
+        return _service.Create(createTrackerDto.Name, createTrackerDto.Description, createTrackerDto.ExpansionTracker);
     }
 }

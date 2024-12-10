@@ -13,8 +13,9 @@ public class MemoryDatabaseTrackerContextTests
     {
         Setup();
     }
+    
 
-    [OneTimeSetUp]
+    [SetUp]
     public void Setup()
     {
         OptionsContext = new DbContextOptionsBuilder<TrackerContext>()
@@ -29,6 +30,13 @@ public class MemoryDatabaseTrackerContextTests
     {
         DisposeTrackerContext();
     }
+    
+    [TearDown]
+    public void TearDown()
+    {
+        DisposeTrackerContext();
+    }
+
 
     private void DisposeTrackerContext()
     {
@@ -36,6 +44,7 @@ public class MemoryDatabaseTrackerContextTests
         {
             TrackerContext.Database.EnsureDeleted();
             TrackerContext.Dispose();
+            TrackerContext = null;
         }
     }
 }

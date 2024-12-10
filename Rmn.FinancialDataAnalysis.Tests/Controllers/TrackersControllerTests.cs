@@ -36,6 +36,26 @@ public class TrackerControllerTests : WebHostTest
         var result = await client.GetFromJsonAsync<TrackerDto>($"/api/Trackers/Get?trackerId={expected.Id}");
         result.Should().BeEquivalentTo(expected);
     }
+    
+    [Test]
+    public async Task CreateNewTracker()
+    {
+        var createTrackerDto = new CreateTrackerDto("New Tracker", "New Description", "some expansion");
+        
+        using var server = new TestServer(WebHostBuilder);
+        using var client = server.CreateClient();
+        
+        var result = await client.PostAsync($"/api/Trackers/Create",
+            new StringContent(JsonSerializer.Serialize(createTrackerDto), Encoding.UTF8, "application/json"));
+        
+        result.EnsureSuccessStatusCode();
+        var idTracker = await result.Content.ReadFromJsonAsync<Guid>();
+
+        var trackerSaved = await client.GetFromJsonAsync<TrackerDto>($"/api/Trackers/Get?trackerId={idTracker}");
+        trackerSaved.ExpansionTracker.Should().BeEquivalentTo(createTrackerDto.ExpansionTracker);
+        trackerSaved.Description.Should().BeEquivalentTo(createTrackerDto.Description);
+        trackerSaved.Name.Should().BeEquivalentTo(createTrackerDto.Name);
+    }
 
     private async Task<TrackerDto> GivenTracker()
     {

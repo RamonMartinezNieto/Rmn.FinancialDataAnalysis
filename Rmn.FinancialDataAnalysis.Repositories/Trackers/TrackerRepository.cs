@@ -24,4 +24,17 @@ public class TrackerRepository : ITrackerRepository
     {
         return await _context.Trackers.FindAsync(trackerId);
     }
+
+    public Tracker Create(string name, string description, string expansionTracker)
+    {
+        var tracker = new Tracker()
+        {
+            Name = name,
+            Description = description,
+            ExpansionTracker = expansionTracker
+        };
+        _context.Trackers.AddAsync(tracker);
+        _context.SaveChanges();
+        return tracker;
+    }
 }

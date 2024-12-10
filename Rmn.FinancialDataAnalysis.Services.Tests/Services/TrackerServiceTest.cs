@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NSubstitute;
@@ -50,6 +51,17 @@ public class TrackerServiceTest
         var result = await _service.GetTrackersById(tracker.Id);
 
         result.Should().BeEquivalentTo(tracker);
+    }
+
+    [Test]
+    public async Task CreateTracker()
+    {
+        var tracker = GivenTrackerBuilder();
+        
+        _repository.Create("Name", "Descripton", "Tracker").Returns(tracker);
+
+        var result = _service.Create("Name", "Descripton", "Tracker");
+        result.Should().Be(tracker.Id);
     }
     
     private static Tracker GivenTrackerBuilder()

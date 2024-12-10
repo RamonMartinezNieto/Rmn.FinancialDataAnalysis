@@ -5,3 +5,8 @@ public record TrackerDto(
     string Name,
     string Description,
     string ExpansionTracker);
+    
+public record CreateTrackerDto(
+    string Name,
+    string Description,
+    string ExpansionTracker);

@@ -8,4 +8,6 @@ public interface ITrackerService
 {
     Task<IEnumerable<Tracker>> GetTrackers();
     Task<Tracker> GetTrackersById(Guid trackerId);
+    Guid Create(string name, string description, string expansionTracker);
+
 }
