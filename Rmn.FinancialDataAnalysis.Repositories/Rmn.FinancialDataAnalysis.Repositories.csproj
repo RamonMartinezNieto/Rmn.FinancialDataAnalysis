@@ -10,7 +10,6 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Business\Rmn.FinancialDataAnalysis.Business.csproj" />
-    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Migrations\Rmn.FinancialDataAnalysis.Migrations.csproj" />
   </ItemGroup>
 
 </Project>

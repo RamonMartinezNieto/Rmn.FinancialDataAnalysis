@@ -15,6 +15,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Business\Rmn.FinancialDataAnalysis.Business.csproj" />
+    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Repositories\Rmn.FinancialDataAnalysis.Repositories.csproj" />
   </ItemGroup>
   
 </Project>

@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
-using Rmn.FinancialDataAnalysis.Migrations;
 using Rmn.FinancialDataAnalysis.Repositories.Trackers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
 using Rmn.FinancialDataAnalysis.Shared.Tests.DatabaseContext;

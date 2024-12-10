@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using Microsoft.AspNetCore.TestHost;
 using Rmn.FinancialDataAnalysis.Dtos;
-using Rmn.FinancialDataAnalysis.Migrations;
 using Rmn.FinancialDataAnalysis.Repositories.Trackers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
 using Rmn.FinancialDataAnalysis.Shared.Tests.WebHosts;

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
-using Rmn.FinancialDataAnalysis.Migrations;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

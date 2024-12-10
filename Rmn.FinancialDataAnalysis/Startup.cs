@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
-using Rmn.FinancialDataAnalysis.Migrations;
 using Rmn.FinancialDataAnalysis.Repositories.Trackers;
 using Rmn.FinancialDataAnalysis.Services.Trackers;
 using System.Text;
@@ -29,7 +28,8 @@ public class Startup
 
         services.AddDbContext<TrackerContext>(options =>
         {
-            options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"));
+            options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"),
+                x => x.MigrationsAssembly("Rmn.FinancialDataAnalysis.Migrations"));
         });
 
         services.AddSingleton<TrackerMapper>();

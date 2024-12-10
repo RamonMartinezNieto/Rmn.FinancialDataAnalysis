@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using Rmn.FinancialDataAnalysis.Migrations;
+using Rmn.FinancialDataAnalysis.Repositories.Trackers;
 
 namespace Rmn.FinancialDataAnalysis.Shared.Tests.DatabaseContext;
 
