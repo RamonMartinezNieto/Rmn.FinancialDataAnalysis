@@ -22,4 +22,11 @@ public class TrackersController : ControllerBase
         var result = await _service.GetTrackers();
         return _mapper.ToDto(result);
     }
+    
+    [HttpGet("Get")]
+    public async Task<TrackerDto> Get(Guid trackerId)
+    {
+        Tracker result = await _service.GetTrackersById(trackerId);
+        return _mapper.ToDto(result);
+    }
 }

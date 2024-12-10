@@ -35,7 +35,7 @@ public class TrackerControllerTests : WebHostTest
         using var server = new TestServer(WebHostBuilder);
         using var client = server.CreateClient();
         
-        var result = await client.GetFromJsonAsync<TrackerDto>($"/api/Trackers/Get/{expected.Id}");
+        var result = await client.GetFromJsonAsync<TrackerDto>($"/api/Trackers/Get?trackerId={expected.Id}");
         result.Should().BeEquivalentTo(expected);
     }
 

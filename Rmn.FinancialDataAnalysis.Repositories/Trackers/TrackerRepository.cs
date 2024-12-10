@@ -22,6 +22,6 @@ public class TrackerRepository : ITrackerRepository
 
     public async Task<Tracker> GetTrackerById(Guid trackerId)
     {
-        throw new System.NotImplementedException();
+        return await _context.Trackers.FindAsync(trackerId);
     }
 }

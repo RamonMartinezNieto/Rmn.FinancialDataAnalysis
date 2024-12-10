@@ -32,12 +32,22 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     {
         var tracker = await GivenTracker(TrackerContext);
 
-        IEnumerable<Tracker> result = await _repository.GetTrackers();
+        var result = await _repository.GetTrackers();
 
         result.Should().HaveCount(1);
         result.Should().ContainEquivalentOf(tracker);
     }
 
+    [Test]
+    public async Task GetTrackerById_WhenExists()
+    {
+        var tracker = await GivenTracker(TrackerContext);
+
+        var result = await _repository.GetTrackerById(tracker.Id);
+        
+        result.Should().BeEquivalentTo(tracker);
+    }
+    
     private async Task<Tracker> GivenTracker(TrackerContext context)
     {
         var tracker = new TrackerBuilder()
