@@ -41,7 +41,7 @@ public class TrackerMapperTests
     [Test]
     public void MapEntityListToDtoList()
     {
-        IEnumerable<TrackerDto> result = _mapper.ToDto(new List<Tracker>() { _tracker }.AsEnumerable());
+        var result = _mapper.ToDto(new List<Tracker>() { _tracker }.AsEnumerable());
 
         result.Should().BeEquivalentTo(new List<TrackerDto>() { _trackerDto });
     }

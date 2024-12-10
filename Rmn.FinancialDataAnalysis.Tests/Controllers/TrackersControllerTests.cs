@@ -16,8 +16,7 @@ public class TrackerControllerTests : WebHostTest
     [Test]
     public async Task GetAll_Tracker_Ibex35()
     {
-        var trackerBuilder = await GivenTracker(TrackerContext);
-        var expected = trackerBuilder.BuildTrackerDto();
+        var expected = await GivenTracker();
 
         using var server = new TestServer(WebHostBuilder);
         using var client = server.CreateClient();
@@ -25,13 +24,12 @@ public class TrackerControllerTests : WebHostTest
         
         result.Should().ContainEquivalentOf(expected);
     }
-    
+
     [Test]
     public async Task GetTrackerById()
     {
-        var trackerBuilder = await GivenTracker(TrackerContext);
-        var expected = trackerBuilder.BuildTrackerDto();
-
+        var expected = await GivenTracker();
+        
         using var server = new TestServer(WebHostBuilder);
         using var client = server.CreateClient();
         
@@ -39,8 +37,13 @@ public class TrackerControllerTests : WebHostTest
         result.Should().BeEquivalentTo(expected);
     }
 
-
-    private async Task<TrackerBuilder> GivenTracker(TrackerContext context)
+    private async Task<TrackerDto> GivenTracker()
+    {
+        var trackerBuilder = await CreateTracker(TrackerContext);
+        return trackerBuilder.BuildTrackerDto();
+    }
+    
+    private async Task<TrackerBuilder> CreateTracker(TrackerContext context)
     {
         var trackerBuilder = CreateTrackerBuilder();
         context.Trackers.Add(trackerBuilder.BuildTrackerEntity());

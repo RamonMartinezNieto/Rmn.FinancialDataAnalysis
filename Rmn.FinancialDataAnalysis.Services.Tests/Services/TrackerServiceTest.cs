@@ -1,18 +1,18 @@
-﻿using FluentAssertions;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
 using Rmn.FinancialDataAnalysis.Services.Trackers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace Rmn.FinancialDataAnalysis.Tests.Services;
+namespace Rmn.FinancialDataAnalysis.Services.Tests.Services;
 
 public class TrackerServiceTest
 {
     private ITrackerRepository _repository;
-    private ITrackerService _service;
+    private TrackerService _service;
 
     [SetUp]
     public void Setup()
@@ -24,7 +24,7 @@ public class TrackerServiceTest
     [Test]
     public async Task ReturnEmpty()
     {
-        IEnumerable<Tracker> result = await _service.GetTrackers();
+        var result = await _service.GetTrackers();
 
         result.Should().BeEmpty();
     }
@@ -32,32 +32,33 @@ public class TrackerServiceTest
     [Test]
     public async Task ReturnAll()
     {
-        var tracker = new TrackerBuilder()
-            .WithName("Name")
-            .WithDescription("Description")
-            .WithExpansionTracker("IB.I")
-            .BuildTrackerEntity();
-
+        var tracker = GivenTrackerBuilder();
         _repository.GetTrackers().Returns(new List<Tracker>() { tracker });
 
-        IEnumerable<Tracker> result = await _service.GetTrackers();
+        var result = await _service.GetTrackers();
 
         result.Should().HaveCount(1);
         result.Should().ContainEquivalentOf(tracker);
     }
 
+    [Test]
     public async Task ReturnTrackerById()
+    {
+        var tracker = GivenTrackerBuilder();
+        _repository.GetTrackerById(tracker.Id).Returns(tracker);
+
+        var result = await _service.GetTrackersById(tracker.Id);
+
+        result.Should().BeEquivalentTo(tracker);
+    }
+    
+    private static Tracker GivenTrackerBuilder()
     {
         var tracker = new TrackerBuilder()
             .WithName("Name")
             .WithDescription("Description")
             .WithExpansionTracker("IB.I")
             .BuildTrackerEntity();
-        
-        _repository.GetTrackerById(tracker.Id).Returns(tracker);
-
-        Tracker result = await _service.GetTrackersById(tracker.Id);
-
-        result.Should().BeEquivalentTo(tracker);
+        return tracker;
     }
 }
