@@ -1,8 +1,3 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Rmn.FinancialDataAnalysis.Repositories.Trackers;
-
 namespace Rmn.FinancialDataAnalysis
 {
     public class Program

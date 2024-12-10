@@ -1,5 +1,4 @@
 ﻿using Riok.Mapperly.Abstractions;
-using Rmn.FinancialDataAnalysis.Business.Trackers;
 
 namespace Rmn.FinancialDataAnalysis.Mappers;
 
