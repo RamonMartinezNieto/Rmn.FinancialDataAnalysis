@@ -64,6 +64,18 @@ public class TrackerServiceTest
         result.Should().Be(tracker.Id);
     }
     
+    [Test]
+    public async Task DeleteTrackerByID()
+    {
+        var tracker = GivenTrackerBuilder();
+        _repository.DeleteTracker(tracker.Id).Returns(true);
+
+        var result = await _service.Delete(tracker.Id);
+
+        result.Should().BeTrue();
+    }
+
+    
     private static Tracker GivenTrackerBuilder()
     {
         var tracker = new TrackerBuilder()

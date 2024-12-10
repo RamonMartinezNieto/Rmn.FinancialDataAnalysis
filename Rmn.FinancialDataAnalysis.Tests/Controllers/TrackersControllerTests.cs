@@ -56,6 +56,19 @@ public class TrackerControllerTests : WebHostTest
         trackerSaved.Description.Should().BeEquivalentTo(createTrackerDto.Description);
         trackerSaved.Name.Should().BeEquivalentTo(createTrackerDto.Name);
     }
+    
+    [Test]
+    public async Task DeeteTracker()
+    {
+        var expected = await GivenTracker();
+        
+        using var server = new TestServer(WebHostBuilder);
+        using var client = server.CreateClient();
+        
+        var result = await client.DeleteAsync($"/api/Trackers/Delete?trackerId={expected.Id}");
+        result.EnsureSuccessStatusCode();
+    }
+
 
     private async Task<TrackerDto> GivenTracker()
     {

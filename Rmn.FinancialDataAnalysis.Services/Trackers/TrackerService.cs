@@ -29,4 +29,9 @@ public class TrackerService : ITrackerService
         var tracker = await _repository.Create(name, description, expansionTracker);
         return tracker.Id;
     }
+
+    public async Task<bool> Delete(Guid trackerId)
+    {
+        return await _repository.DeleteTracker(trackerId);
+    }
 }

@@ -59,6 +59,16 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
         trackerInDatabase.Should().BeEquivalentTo(result);
     }
     
+    [Test]
+    public async Task DeleteTracker()
+    {
+        var tracker = await GivenTracker(TrackerContext);
+
+        var result = await _repository.DeleteTracker(tracker.Id);
+        
+        result.Should().BeTrue();
+    }
+    
     private async Task<Tracker> GivenTracker(TrackerContext context)
     {
         var tracker = new TrackerBuilder()

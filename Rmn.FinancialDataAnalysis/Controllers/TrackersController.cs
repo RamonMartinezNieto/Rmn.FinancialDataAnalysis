@@ -24,7 +24,7 @@ public class TrackersController : ControllerBase
     }
     
     [HttpGet("Get")]
-    public async Task<TrackerDto> Get(Guid trackerId)
+    public async Task<TrackerDto> Get([FromQuery] Guid trackerId)
     {
         var result = await _service.GetTrackersById(trackerId);
         return _mapper.ToDto(result);
@@ -34,5 +34,11 @@ public class TrackersController : ControllerBase
     public async Task<Guid> Create([FromBody] CreateTrackerDto createTrackerDto)
     {
         return await _service.Create(createTrackerDto.Name, createTrackerDto.Description, createTrackerDto.ExpansionTracker);
+    }
+    
+    [HttpDelete("Delete")]
+    public async Task<bool> Delete([FromQuery] Guid trackerId)
+    {
+        return await _service.Delete(trackerId);
     }
 }
