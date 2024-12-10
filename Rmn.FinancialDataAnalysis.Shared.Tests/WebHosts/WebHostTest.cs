@@ -19,7 +19,6 @@ public class WebHostTest : MemoryDatabaseTrackerContextTests
     [SetUp]
     public void Setup()
     {
-
         WebHostBuilder = CreateHostBuilder();
     }
 

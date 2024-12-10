@@ -5,6 +5,8 @@ using Rmn.FinancialDataAnalysis.Repositories.Trackers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
 using Rmn.FinancialDataAnalysis.Shared.Tests.WebHosts;
 using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
 
 namespace Rmn.FinancialDataAnalysis.Tests.Controllers;
 
@@ -19,20 +21,39 @@ public class TrackerControllerTests : WebHostTest
 
         using var server = new TestServer(WebHostBuilder);
         using var client = server.CreateClient();
-
         var result = await client.GetFromJsonAsync<IEnumerable<TrackerDto>>("/api/Trackers/GetTrackers");
+        
         result.Should().ContainEquivalentOf(expected);
     }
+    
+    [Test]
+    public async Task GetTrackerById()
+    {
+        var trackerBuilder = await GivenTracker(TrackerContext);
+        var expected = trackerBuilder.BuildTrackerDto();
+
+        using var server = new TestServer(WebHostBuilder);
+        using var client = server.CreateClient();
+        
+        var result = await client.GetFromJsonAsync<TrackerDto>($"/api/Trackers/Get/{expected.Id}");
+        result.Should().BeEquivalentTo(expected);
+    }
+
 
     private async Task<TrackerBuilder> GivenTracker(TrackerContext context)
+    {
+        var trackerBuilder = CreateTrackerBuilder();
+        context.Trackers.Add(trackerBuilder.BuildTrackerEntity());
+        await context.SaveChangesAsync();
+        return trackerBuilder;
+    }
+
+    private static TrackerBuilder CreateTrackerBuilder()
     {
         var trackerBuilder = new TrackerBuilder()
             .WithName("IBEX")
             .WithDescription("SomeDescription")
             .WithExpansionTracker("IB.I");
-
-        context.Trackers.Add(trackerBuilder.BuildTrackerEntity());
-        await context.SaveChangesAsync();
         return trackerBuilder;
     }
 }
