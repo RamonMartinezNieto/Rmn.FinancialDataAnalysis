@@ -20,7 +20,7 @@ public class TrackerControllerTests : WebHostTest
 
         using var server = new TestServer(WebHostBuilder);
         using var client = server.CreateClient();
-        var result = await client.GetFromJsonAsync<IEnumerable<TrackerDto>>("/api/Trackers/GetTrackers");
+        var result = await client.GetFromJsonAsync<IEnumerable<TrackerDto>>("/api/Trackers/GetAll");
         
         result.Should().ContainEquivalentOf(expected);
     }

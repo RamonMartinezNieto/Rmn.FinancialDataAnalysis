@@ -16,12 +16,12 @@ public class TrackerRepository : ITrackerRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<Tracker>> GetTrackers()
+    public async Task<IEnumerable<Tracker>> GetAll()
     {
         return await _context.Trackers.ToListAsync();
     }
 
-    public async Task<Tracker> GetTrackerById(Guid trackerId)
+    public async Task<Tracker> Get(Guid trackerId)
     {
         return await _context.Trackers.FindAsync(trackerId);
     }
@@ -39,7 +39,7 @@ public class TrackerRepository : ITrackerRepository
         return tracker;
     }
 
-    public async Task<bool> DeleteTracker(Guid trackerId)
+    public async Task<bool> Delete(Guid trackerId)
     {
         var tracker = await _context.Trackers.FindAsync(trackerId);
         if (tracker == null) return false;

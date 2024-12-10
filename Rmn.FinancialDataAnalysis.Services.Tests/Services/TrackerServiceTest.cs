@@ -25,7 +25,7 @@ public class TrackerServiceTest
     [Test]
     public async Task ReturnEmpty()
     {
-        var result = await _service.GetTrackers();
+        var result = await _service.GetAll();
 
         result.Should().BeEmpty();
     }
@@ -34,9 +34,9 @@ public class TrackerServiceTest
     public async Task ReturnAll()
     {
         var tracker = GivenTrackerBuilder();
-        _repository.GetTrackers().Returns(new List<Tracker>() { tracker });
+        _repository.GetAll().Returns(new List<Tracker>() { tracker });
 
-        var result = await _service.GetTrackers();
+        var result = await _service.GetAll();
 
         result.Should().HaveCount(1);
         result.Should().ContainEquivalentOf(tracker);
@@ -46,9 +46,9 @@ public class TrackerServiceTest
     public async Task ReturnTrackerById()
     {
         var tracker = GivenTrackerBuilder();
-        _repository.GetTrackerById(tracker.Id).Returns(tracker);
+        _repository.Get(tracker.Id).Returns(tracker);
 
-        var result = await _service.GetTrackersById(tracker.Id);
+        var result = await _service.Get(tracker.Id);
 
         result.Should().BeEquivalentTo(tracker);
     }
@@ -68,7 +68,7 @@ public class TrackerServiceTest
     public async Task DeleteTrackerByID()
     {
         var tracker = GivenTrackerBuilder();
-        _repository.DeleteTracker(tracker.Id).Returns(true);
+        _repository.Delete(tracker.Id).Returns(true);
 
         var result = await _service.Delete(tracker.Id);
 

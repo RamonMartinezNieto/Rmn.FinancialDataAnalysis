@@ -14,14 +14,14 @@ public class TrackerService : ITrackerService
         _repository = repository;
     }
 
-    public async Task<IEnumerable<Tracker>> GetTrackers()
+    public async Task<IEnumerable<Tracker>> GetAll()
     {
-        return await _repository.GetTrackers();
+        return await _repository.GetAll();
     }
 
-    public async Task<Tracker> GetTrackersById(Guid trackerId)
+    public async Task<Tracker> Get(Guid trackerId)
     {
-        return await _repository.GetTrackerById(trackerId);
+        return await _repository.Get(trackerId);
     }
 
     public async Task<Guid> Create(string name, string description, string expansionTracker)
@@ -32,6 +32,6 @@ public class TrackerService : ITrackerService
 
     public async Task<bool> Delete(Guid trackerId)
     {
-        return await _repository.DeleteTracker(trackerId);
+        return await _repository.Delete(trackerId);
     }
 }

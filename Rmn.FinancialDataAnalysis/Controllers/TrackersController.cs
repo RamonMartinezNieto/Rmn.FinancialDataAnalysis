@@ -16,17 +16,17 @@ public class TrackersController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet("GetTrackers")]
-    public async Task<IEnumerable<TrackerDto>> GetTrackers()
+    [HttpGet("GetAll")]
+    public async Task<IEnumerable<TrackerDto>> GetAll()
     {
-        var result = await _service.GetTrackers();
+        var result = await _service.GetAll();
         return _mapper.ToDto(result);
     }
     
     [HttpGet("Get")]
     public async Task<TrackerDto> Get([FromQuery] Guid trackerId)
     {
-        var result = await _service.GetTrackersById(trackerId);
+        var result = await _service.Get(trackerId);
         return _mapper.ToDto(result);
     }
 

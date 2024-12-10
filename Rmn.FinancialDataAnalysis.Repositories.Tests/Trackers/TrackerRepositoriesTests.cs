@@ -22,7 +22,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     [Test]
     public async Task GetAllTrackers_WhenEmpty()
     {
-        IEnumerable<Tracker> result = await _repository.GetTrackers();
+        IEnumerable<Tracker> result = await _repository.GetAll();
 
         result.Should().BeEmpty();
     }
@@ -32,7 +32,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     {
         var tracker = await GivenTracker(TrackerContext);
 
-        var result = await _repository.GetTrackers();
+        var result = await _repository.GetAll();
 
         result.Should().HaveCount(1);
         result.Should().ContainEquivalentOf(tracker);
@@ -43,7 +43,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     {
         var tracker = await GivenTracker(TrackerContext);
 
-        var result = await _repository.GetTrackerById(tracker.Id);
+        var result = await _repository.Get(tracker.Id);
         
         result.Should().BeEquivalentTo(tracker);
     }
@@ -55,7 +55,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
         
         var result = await _repository.Create(tracker.Name, tracker.Description, tracker.ExpansionTracker);
 
-        var trackerInDatabase = await _repository.GetTrackerById(result.Id);
+        var trackerInDatabase = await _repository.Get(result.Id);
         trackerInDatabase.Should().BeEquivalentTo(result);
     }
     
@@ -64,7 +64,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     {
         var tracker = await GivenTracker(TrackerContext);
 
-        var result = await _repository.DeleteTracker(tracker.Id);
+        var result = await _repository.Delete(tracker.Id);
         
         result.Should().BeTrue();
     }
