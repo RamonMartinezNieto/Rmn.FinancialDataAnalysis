@@ -24,8 +24,9 @@ public class TrackerService : ITrackerService
         return await _repository.GetTrackerById(trackerId);
     }
 
-    public Guid Create(string name, string description, string expansionTracker)
+    public async Task<Guid> Create(string name, string description, string expansionTracker)
     {
-        return _repository.Create(name, description, expansionTracker).Id;
+        var tracker = await _repository.Create(name, description, expansionTracker);
+        return tracker.Id;
     }
 }

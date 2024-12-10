@@ -25,7 +25,7 @@ public class TrackerRepository : ITrackerRepository
         return await _context.Trackers.FindAsync(trackerId);
     }
 
-    public Tracker Create(string name, string description, string expansionTracker)
+    public async Task<Tracker> Create(string name, string description, string expansionTracker)
     {
         var tracker = new Tracker()
         {
@@ -33,8 +33,8 @@ public class TrackerRepository : ITrackerRepository
             Description = description,
             ExpansionTracker = expansionTracker
         };
-        _context.Trackers.AddAsync(tracker);
-        _context.SaveChanges();
+        await _context.Trackers.AddAsync(tracker);
+        await _context.SaveChangesAsync();
         return tracker;
     }
 }

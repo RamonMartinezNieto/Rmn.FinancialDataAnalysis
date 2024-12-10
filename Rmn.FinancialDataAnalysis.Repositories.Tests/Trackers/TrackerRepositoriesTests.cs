@@ -53,7 +53,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     {
         var tracker = await GivenTracker(TrackerContext);
         
-        var result = _repository.Create(tracker.Name, tracker.Description, tracker.ExpansionTracker);
+        var result = await _repository.Create(tracker.Name, tracker.Description, tracker.ExpansionTracker);
 
         var trackerInDatabase = await _repository.GetTrackerById(result.Id);
         trackerInDatabase.Should().BeEquivalentTo(result);

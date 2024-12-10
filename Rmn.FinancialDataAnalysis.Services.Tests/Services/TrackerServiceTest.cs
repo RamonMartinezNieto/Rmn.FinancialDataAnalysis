@@ -60,7 +60,7 @@ public class TrackerServiceTest
         
         _repository.Create("Name", "Descripton", "Tracker").Returns(tracker);
 
-        var result = _service.Create("Name", "Descripton", "Tracker");
+        var result = await _service.Create("Name", "Descripton", "Tracker");
         result.Should().Be(tracker.Id);
     }
     

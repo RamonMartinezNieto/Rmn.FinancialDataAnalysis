@@ -8,5 +8,5 @@ public interface ITrackerRepository
 {
     Task<IEnumerable<Tracker>> GetTrackers();
     Task<Tracker> GetTrackerById(Guid trackerId);
-    Tracker Create(string name, string description, string expansionTracker);
+    Task<Tracker> Create(string name, string description, string expansionTracker);
 }

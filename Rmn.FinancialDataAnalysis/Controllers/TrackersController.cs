@@ -33,6 +33,6 @@ public class TrackersController : ControllerBase
     [HttpPost("Create")]
     public async Task<Guid> Create([FromBody] CreateTrackerDto createTrackerDto)
     {
-        return _service.Create(createTrackerDto.Name, createTrackerDto.Description, createTrackerDto.ExpansionTracker);
+        return await _service.Create(createTrackerDto.Name, createTrackerDto.Description, createTrackerDto.ExpansionTracker);
     }
 }
