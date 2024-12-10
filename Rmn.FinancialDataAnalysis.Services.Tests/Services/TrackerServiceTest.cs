@@ -45,4 +45,19 @@ public class TrackerServiceTest
         result.Should().HaveCount(1);
         result.Should().ContainEquivalentOf(tracker);
     }
+
+    public async Task ReturnTrackerById()
+    {
+        var tracker = new TrackerBuilder()
+            .WithName("Name")
+            .WithDescription("Description")
+            .WithExpansionTracker("IB.I")
+            .BuildTrackerEntity();
+        
+        _repository.GetTrackerById(tracker.Id).Returns(tracker);
+
+        Tracker result = await _service.GetTrackersById(tracker.Id);
+
+        result.Should().BeEquivalentTo(tracker);
+    }
 }

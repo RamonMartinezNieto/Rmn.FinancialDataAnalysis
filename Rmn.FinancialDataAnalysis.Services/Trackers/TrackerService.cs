@@ -1,4 +1,5 @@
-﻿using Rmn.FinancialDataAnalysis.Business.Trackers;
+﻿using System;
+using Rmn.FinancialDataAnalysis.Business.Trackers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -16,5 +17,10 @@ public class TrackerService : ITrackerService
     public async Task<IEnumerable<Tracker>> GetTrackers()
     {
         return await _repository.GetTrackers();
+    }
+
+    public async Task<Tracker> GetTrackersById(Guid trackerId)
+    {
+        return await _repository.GetTrackerById(trackerId);
     }
 }

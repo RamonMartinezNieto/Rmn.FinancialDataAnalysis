@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -17,5 +18,10 @@ public class TrackerRepository : ITrackerRepository
     public async Task<IEnumerable<Tracker>> GetTrackers()
     {
         return await _context.Trackers.ToListAsync();
+    }
+
+    public async Task<Tracker> GetTrackerById(Guid trackerId)
+    {
+        throw new System.NotImplementedException();
     }
 }
