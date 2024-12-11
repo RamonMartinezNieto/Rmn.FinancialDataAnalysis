@@ -1,14 +1,14 @@
-﻿using FluentAssertions;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
+using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 using Rmn.FinancialDataAnalysis.Infrastructure.Trackers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 
-namespace Rmn.FinancialDataAnalysis.Services.Tests.Trackers;
+namespace Rmn.FinancialDataAnalysis.Infrastructure.Tests.Trackers;
 
 public class TrackerServiceTest
 {

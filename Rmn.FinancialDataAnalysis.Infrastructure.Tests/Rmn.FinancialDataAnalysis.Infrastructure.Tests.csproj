@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <IsPackable>false</IsPackable>
+    <AssemblyName>Rmn.FinancialDataAnalysis.Infrastructure.Tests</AssemblyName>
+    <RootNamespace>Rmn.FinancialDataAnalysis.Infrastructure.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
