@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Rmn.FinancialDataAnalysis.Business.Expansion;
+namespace Rmn.FinancialDataAnalysis.Business.Expansion.Models;
 
 public class ExpansionRequest
 {

@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using Rmn.FinancialDataAnalysis.Business.Expansion;
-using Rmn.FinancialDataAnalysis.Clients;
-using Rmn.FinancialDataAnalysis.Services.Expansion.Providers;
+using Rmn.FinancialDataAnalysis.Business.Expansion.Models;
+using Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Providers;
 
 namespace Rmn.FinancialDataAnalysis.Tests.Providers;
 

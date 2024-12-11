@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Rmn.FinancialDataAnalysis.Business.Trackers;
+namespace Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 
 public class Tracker
 {

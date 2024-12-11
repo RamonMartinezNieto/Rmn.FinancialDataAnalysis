@@ -1,13 +1,7 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Microsoft.OpenApi.Models;
-using Rmn.FinancialDataAnalysis.Services.Trackers;
-using System.Text;
-using Microsoft.Net.Http.Headers;
-using Rmn.FinancialDataAnalysis.Business.Expansion;
-using Rmn.FinancialDataAnalysis.Clients;
-using Rmn.FinancialDataAnalysis.Services.Expansion.Clients;
-using Rmn.FinancialDataAnalysis.Services.Expansion.Providers;
+using Rmn.FinancialDataAnalysis.Repositories.Trackers;
+using Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Clients;
+using Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Providers;
+using Rmn.FinancialDataAnalysis.Infrastructure.Trackers;
 
 namespace Rmn.FinancialDataAnalysis;
 

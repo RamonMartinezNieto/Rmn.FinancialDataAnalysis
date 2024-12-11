@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 
 namespace Rmn.FinancialDataAnalysis.Business.Trackers;
 

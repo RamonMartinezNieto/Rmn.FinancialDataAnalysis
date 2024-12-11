@@ -1,8 +1,4 @@
-﻿using System.Threading.Tasks;
-using Rmn.FinancialDataAnalysis.Business.Expansion;
-using Rmn.FinancialDataAnalysis.Clients;
-
-namespace Rmn.FinancialDataAnalysis.Services.Expansion.Providers;
+﻿namespace Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Providers;
 
 public class ExpansionHistoricProvider : IExpansionHistoricProvider
 {

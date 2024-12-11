@@ -1,7 +1,4 @@
-﻿using Rmn.FinancialDataAnalysis.Business.Expansion;
-using IExpansionHistoricProvider = Rmn.FinancialDataAnalysis.Business.Expansion.IExpansionHistoricProvider;
-
-namespace Rmn.FinancialDataAnalysis.Controllers;
+﻿namespace Rmn.FinancialDataAnalysis.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

@@ -6,6 +6,7 @@ using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
 using Rmn.FinancialDataAnalysis.Shared.Tests.DatabaseContext;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 
 namespace Rmn.FinancialDataAnalysis.Repositories.Tests.Trackers;
 

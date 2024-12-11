@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using Rmn.FinancialDataAnalysis.Business.Expansion;
-using Rmn.FinancialDataAnalysis.Clients;
-
-namespace Rmn.FinancialDataAnalysis.Services.Expansion.Clients;
+﻿namespace Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Clients;
 
 public class ExpansionHistoricClient : IExpansionHistoricClient
 {

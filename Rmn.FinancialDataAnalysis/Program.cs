@@ -1,3 +1,5 @@
+using Rmn.FinancialDataAnalysis.Repositories.Trackers;
+
 namespace Rmn.FinancialDataAnalysis
 {
     public class Program

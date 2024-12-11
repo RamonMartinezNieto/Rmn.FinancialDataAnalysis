@@ -1,6 +1,7 @@
 ﻿using Rmn.FinancialDataAnalysis.Business.Trackers;
 using Rmn.FinancialDataAnalysis.Dtos;
 using System;
+using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 
 namespace Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
 

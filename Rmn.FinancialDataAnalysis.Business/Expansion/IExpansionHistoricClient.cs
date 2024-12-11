@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Rmn.FinancialDataAnalysis.Business.Expansion;
+using Rmn.FinancialDataAnalysis.Business.Expansion.Models;
 
-namespace Rmn.FinancialDataAnalysis.Clients;
+namespace Rmn.FinancialDataAnalysis.Business.Expansion;
 
 public interface IExpansionHistoricClient
 {

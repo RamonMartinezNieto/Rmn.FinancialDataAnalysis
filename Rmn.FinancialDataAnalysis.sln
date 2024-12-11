@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Shared.Tests", "Rmn.FinancialDataAnalysis.Shared.Tests\Rmn.FinancialDataAnalysis.Shared.Tests.csproj", "{6DF7890E-769A-4AFC-9F49-4F797D630072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Infraestructure", "Rmn.FinancialDataAnalysis.Infraestructure\Rmn.FinancialDataAnalysis.Infraestructure.csproj", "{931813E9-91B9-4D89-8AAE-18E82556675A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Infrastructure", "Rmn.FinancialDataAnalysis.Infrastructure\Rmn.FinancialDataAnalysis.Infrastructure.csproj", "{931813E9-91B9-4D89-8AAE-18E82556675A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Services.Tests", "Rmn.FinancialDataAnalysis.Services.Tests\Rmn.FinancialDataAnalysis.Services.Tests.csproj", "{2502FE1E-2845-468D-B72F-C58468D5C5AF}"
 EndProject

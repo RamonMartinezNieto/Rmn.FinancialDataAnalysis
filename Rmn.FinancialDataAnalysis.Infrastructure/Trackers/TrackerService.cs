@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Rmn.FinancialDataAnalysis.Business.Trackers;
-
-namespace Rmn.FinancialDataAnalysis.Services.Trackers;
+﻿namespace Rmn.FinancialDataAnalysis.Infrastructure.Trackers;
 
 public class TrackerService : ITrackerService
 {

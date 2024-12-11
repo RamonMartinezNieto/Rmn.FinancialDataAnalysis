@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
+using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 using Rmn.FinancialDataAnalysis.Dtos;
 using Rmn.FinancialDataAnalysis.Mappers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
