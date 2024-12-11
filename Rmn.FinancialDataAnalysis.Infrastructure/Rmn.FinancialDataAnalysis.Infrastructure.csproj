@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Repositories\Rmn.FinancialDataAnalysis.Repositories.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Expansion\" />
-  </ItemGroup>
-
 </Project>

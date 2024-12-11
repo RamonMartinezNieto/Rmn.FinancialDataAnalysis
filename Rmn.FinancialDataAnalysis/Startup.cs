@@ -1,6 +1,5 @@
+using Rmn.FinancialDataAnalysis.Infrastructure.Expansion;
 using Rmn.FinancialDataAnalysis.Repositories.Trackers;
-using Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Clients;
-using Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Providers;
 using Rmn.FinancialDataAnalysis.Infrastructure.Trackers;
 
 namespace Rmn.FinancialDataAnalysis;
@@ -29,15 +28,13 @@ public class Startup
         services.AddTransient<ITrackerRepository, TrackerRepository>();
         services.AddTransient<ITrackerService, TrackerService>();
         
-        services.AddHttpClient<IExpansionHistoricClient, ExpansionHistoricClient>()
+        services.AddHttpClient<IExpansionHistoricService, ExpansionHistoricService>()
             .ConfigureHttpClient((sp, client) =>
             {
                 client.BaseAddress = new Uri(Configuration.GetValue<string>("Clients:Expansion:BaseUrl"));
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, Configuration.GetValue<string>("Clients:Expansion:AcceptedType"));
             });
         
-        services.AddScoped<IExpansionHistoricProvider, ExpansionHistoricProvider>();
-
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Rmn.FinancialDataAnalysis", Version = "v1" });

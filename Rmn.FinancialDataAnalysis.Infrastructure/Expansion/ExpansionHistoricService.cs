@@ -1,10 +1,10 @@
-﻿namespace Rmn.FinancialDataAnalysis.Infrastructure.Expansion.Clients;
+﻿namespace Rmn.FinancialDataAnalysis.Infrastructure.Expansion;
 
-public class ExpansionHistoricClient : IExpansionHistoricClient
+public class ExpansionHistoricService : IExpansionHistoricService
 {
     private readonly HttpClient _httpClient;
 
-    public ExpansionHistoricClient(HttpClient httpClient)
+    public ExpansionHistoricService(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
