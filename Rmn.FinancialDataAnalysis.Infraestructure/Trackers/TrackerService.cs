@@ -1,7 +1,7 @@
 ﻿using System;
-using Rmn.FinancialDataAnalysis.Business.Trackers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Rmn.FinancialDataAnalysis.Business.Trackers;
 
 namespace Rmn.FinancialDataAnalysis.Services.Trackers;
 

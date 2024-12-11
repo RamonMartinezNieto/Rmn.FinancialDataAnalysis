@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
 using Rmn.FinancialDataAnalysis.Business.Trackers;
 using Rmn.FinancialDataAnalysis.Services.Trackers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.Builders;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Rmn.FinancialDataAnalysis.Services.Tests.Services;
+namespace Rmn.FinancialDataAnalysis.Services.Tests.Trackers;
 
 public class TrackerServiceTest
 {
@@ -57,13 +56,13 @@ public class TrackerServiceTest
     public async Task CreateTracker()
     {
         var tracker = GivenTrackerBuilder();
-        
+
         _repository.Create("Name", "Descripton", "Tracker").Returns(tracker);
 
         var result = await _service.Create("Name", "Descripton", "Tracker");
         result.Should().Be(tracker.Id);
     }
-    
+
     [Test]
     public async Task DeleteTrackerByID()
     {
@@ -74,7 +73,7 @@ public class TrackerServiceTest
 
         result.Should().BeTrue();
     }
-    
+
     private static Tracker GivenTrackerBuilder()
     {
         var tracker = new TrackerBuilder()

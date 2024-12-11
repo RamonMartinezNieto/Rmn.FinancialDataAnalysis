@@ -20,7 +20,7 @@
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Business\Rmn.FinancialDataAnalysis.Business.csproj" />
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Migrations\Rmn.FinancialDataAnalysis.Migrations.csproj" />
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Repositories\Rmn.FinancialDataAnalysis.Repositories.csproj" />
-    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Services\Rmn.FinancialDataAnalysis.Services.csproj" />
+    <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Infraestructure\Rmn.FinancialDataAnalysis.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

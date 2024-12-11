@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Rmn.FinancialDataAnalysis.Business.Trackers;
-using Rmn.FinancialDataAnalysis.Repositories.Trackers;
 using Rmn.FinancialDataAnalysis.Services.Trackers;
 using System.Text;
+using Microsoft.Net.Http.Headers;
+using Rmn.FinancialDataAnalysis.Business.Expansion;
+using Rmn.FinancialDataAnalysis.Clients;
+using Rmn.FinancialDataAnalysis.Services.Expansion.Clients;
+using Rmn.FinancialDataAnalysis.Services.Expansion.Providers;
 
 namespace Rmn.FinancialDataAnalysis;
 
@@ -32,9 +32,17 @@ public class Startup
                 x => x.MigrationsAssembly("Rmn.FinancialDataAnalysis.Migrations"));
         });
 
-        services.AddSingleton<TrackerMapper>();
         services.AddTransient<ITrackerRepository, TrackerRepository>();
         services.AddTransient<ITrackerService, TrackerService>();
+        
+        services.AddHttpClient<IExpansionHistoricClient, ExpansionHistoricClient>()
+            .ConfigureHttpClient((sp, client) =>
+            {
+                client.BaseAddress = new Uri(Configuration.GetValue<string>("Clients:Expansion:BaseUrl"));
+                client.DefaultRequestHeaders.Add(HeaderNames.Accept, Configuration.GetValue<string>("Clients:Expansion:AcceptedType"));
+            });
+        
+        services.AddScoped<IExpansionHistoricProvider, ExpansionHistoricProvider>();
 
         services.AddSwaggerGen(c =>
         {
@@ -61,6 +69,5 @@ public class Startup
         {
             endpoints.MapControllers();
         });
-
     }
 }

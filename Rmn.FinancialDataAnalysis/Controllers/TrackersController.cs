@@ -8,10 +8,10 @@ public class TrackersController : ControllerBase
     private readonly ITrackerService _service;
     private readonly TrackerMapper _mapper;
 
-    public TrackersController(ITrackerService service, TrackerMapper mapper)
+    public TrackersController(ITrackerService service)
     {
         _service = service;
-        _mapper = mapper;
+        _mapper = new TrackerMapper();
     }
 
     [HttpGet("GetAll")]

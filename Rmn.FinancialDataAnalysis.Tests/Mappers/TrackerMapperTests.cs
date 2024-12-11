@@ -9,7 +9,7 @@ namespace Rmn.FinancialDataAnalysis.Tests.Mappers;
 public class TrackerMapperTests
 {
     private TrackerMapper _mapper;
-    private TrackerDto _trackerDto;
+    private TrackerDto _trackerDtos;
     private Tracker _tracker;
 
     [SetUp]
@@ -18,14 +18,14 @@ public class TrackerMapperTests
         _mapper = new TrackerMapper();
 
         var trackerBuilder = GetTrackerBuilder();
-        _trackerDto = trackerBuilder.BuildTrackerDto();
+        _trackerDtos = trackerBuilder.BuildTrackerDto();
         _tracker = trackerBuilder.BuildTrackerEntity();
     }
 
     [Test]
     public void MapDtoToEntity()
     {
-        var result = _mapper.ToEntity(_trackerDto);
+        var result = _mapper.ToEntity(_trackerDtos);
 
         result.Should().BeEquivalentTo(_tracker);
     }
@@ -35,7 +35,7 @@ public class TrackerMapperTests
     {
         var result = _mapper.ToDto(_tracker);
 
-        result.Should().BeEquivalentTo(_trackerDto);
+        result.Should().BeEquivalentTo(_trackerDtos);
     }
 
     [Test]
@@ -43,7 +43,7 @@ public class TrackerMapperTests
     {
         var result = _mapper.ToDto(new List<Tracker>() { _tracker }.AsEnumerable());
 
-        result.Should().BeEquivalentTo(new List<TrackerDto>() { _trackerDto });
+        result.Should().BeEquivalentTo(new List<TrackerDto>() { _trackerDtos });
     }
 
     private static TrackerBuilder GetTrackerBuilder()

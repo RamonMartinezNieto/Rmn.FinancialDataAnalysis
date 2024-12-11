@@ -25,11 +25,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Shared.Tests", "Rmn.FinancialDataAnalysis.Shared.Tests\Rmn.FinancialDataAnalysis.Shared.Tests.csproj", "{6DF7890E-769A-4AFC-9F49-4F797D630072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Services", "Rmn.FinancialDataAnalysis.Services\Rmn.FinancialDataAnalysis.Services.csproj", "{931813E9-91B9-4D89-8AAE-18E82556675A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Infraestructure", "Rmn.FinancialDataAnalysis.Infraestructure\Rmn.FinancialDataAnalysis.Infraestructure.csproj", "{931813E9-91B9-4D89-8AAE-18E82556675A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Services.Tests", "Rmn.FinancialDataAnalysis.Services.Tests\Rmn.FinancialDataAnalysis.Services.Tests.csproj", "{2502FE1E-2845-468D-B72F-C58468D5C5AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Migrations", "Rmn.FinancialDataAnalysis.Migrations\Rmn.FinancialDataAnalysis.Migrations.csproj", "{942A7CFD-A9E0-4D85-8B95-5D136DADA491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmn.FinancialDataAnalysis.Business.Tests", "Rmn.FinancialDataAnalysis.Business.Tests\Rmn.FinancialDataAnalysis.Business.Tests.csproj", "{9EEAD857-83A9-4186-9433-2B865BCCCA5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{942A7CFD-A9E0-4D85-8B95-5D136DADA491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{942A7CFD-A9E0-4D85-8B95-5D136DADA491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{942A7CFD-A9E0-4D85-8B95-5D136DADA491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EEAD857-83A9-4186-9433-2B865BCCCA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EEAD857-83A9-4186-9433-2B865BCCCA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EEAD857-83A9-4186-9433-2B865BCCCA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EEAD857-83A9-4186-9433-2B865BCCCA5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,5 +93,6 @@ Global
 		{931813E9-91B9-4D89-8AAE-18E82556675A} = {2E13BA3C-1C26-4EAE-844C-AAC4D722FC67}
 		{2502FE1E-2845-468D-B72F-C58468D5C5AF} = {C30E0CF9-F73F-475C-9091-EC4A4C6AAF98}
 		{942A7CFD-A9E0-4D85-8B95-5D136DADA491} = {2E13BA3C-1C26-4EAE-844C-AAC4D722FC67}
+		{9EEAD857-83A9-4186-9433-2B865BCCCA5D} = {C30E0CF9-F73F-475C-9091-EC4A4C6AAF98}
 	EndGlobalSection
 EndGlobal

@@ -2,11 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>Rmn.FinancialDataAnalysis.Services</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Business\Rmn.FinancialDataAnalysis.Business.csproj" />
     <ProjectReference Include="..\Rmn.FinancialDataAnalysis.Repositories\Rmn.FinancialDataAnalysis.Repositories.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Expansion\" />
   </ItemGroup>
 
 </Project>
