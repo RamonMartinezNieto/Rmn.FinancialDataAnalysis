@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Rmn.FinancialDataAnalysis.Controllers;
 using Rmn.FinancialDataAnalysis.Dtos;
 using Rmn.FinancialDataAnalysis.Mappers;
 

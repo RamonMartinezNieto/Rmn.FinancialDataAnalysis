@@ -5,7 +5,6 @@ using NUnit.Framework;
 using Rmn.FinancialDataAnalysis.Repositories.Trackers;
 using Rmn.FinancialDataAnalysis.Shared.Tests.DatabaseContext;
 
-
 namespace Rmn.FinancialDataAnalysis.Shared.Tests.WebHosts;
 
 public class WebHostTest

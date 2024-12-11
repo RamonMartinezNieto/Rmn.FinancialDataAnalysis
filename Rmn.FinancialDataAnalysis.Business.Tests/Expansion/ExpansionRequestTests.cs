@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Rmn.FinancialDataAnalysis.Business.Expansion;
 using Rmn.FinancialDataAnalysis.Business.Expansion.Models;
 
 namespace Rmn.FinancialDataAnalysis.Business.Tests.Expansion;

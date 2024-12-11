@@ -1,5 +1,4 @@
-﻿using Rmn.FinancialDataAnalysis.Business.Trackers;
-using Rmn.FinancialDataAnalysis.Dtos;
+﻿using Rmn.FinancialDataAnalysis.Dtos;
 using System;
 using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 
