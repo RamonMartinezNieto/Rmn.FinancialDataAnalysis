@@ -13,7 +13,7 @@ public class TrackerRepositoriesTests : MemoryDatabaseTrackerContextTests
     private TrackerRepository _repository;
 
     [SetUp]
-    public void Setup()
+    public new void Setup()
     {
         _repository = new TrackerRepository(TrackerContext);
     }

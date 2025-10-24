@@ -17,7 +17,7 @@ public class ExpansionHistoricService : IExpansionHistoricService
         return await _httpClient.GetFromJsonAsync<ExpansionData>(uriBuilder.Uri);
     }
     
-    public UriBuilder CreateUriBuilder(Dictionary<string, string> queryParams)
+    private UriBuilder CreateUriBuilder(Dictionary<string, string> queryParams)
     {
         var uriBuilder = new UriBuilder(_httpClient.BaseAddress!);
         var query = string.Join("&", queryParams.Select(kvp => $"{kvp.Key}={Uri.EscapeDataString((string)kvp.Value)}"));
