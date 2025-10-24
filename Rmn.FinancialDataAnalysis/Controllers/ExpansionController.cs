@@ -8,10 +8,10 @@ public class ExpansionController : ControllerBase
     private readonly IExpansionHistoricService _service;
     private readonly ExpansionMapper _mapper;
 
-    public ExpansionController(IExpansionHistoricService service)
+    public ExpansionController(IExpansionHistoricService service, ExpansionMapper mapper)
     {
        _service = service;
-       _mapper = new ExpansionMapper();
+       _mapper = mapper;
     }
 
     [HttpPost("GetMonth")]

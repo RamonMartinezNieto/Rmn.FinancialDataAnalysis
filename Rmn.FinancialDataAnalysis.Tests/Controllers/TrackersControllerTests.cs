@@ -52,13 +52,14 @@ public class TrackerControllerTests : WebHostTest
         var idTracker = await result.Content.ReadFromJsonAsync<Guid>();
 
         var trackerSaved = await client.GetFromJsonAsync<TrackerDto>($"/api/Trackers/Get?trackerId={idTracker}");
-        trackerSaved.ExpansionTracker.Should().BeEquivalentTo(createTrackerDto.ExpansionTracker);
+        trackerSaved.Should().NotBeNull();
+        trackerSaved!.ExpansionTracker.Should().BeEquivalentTo(createTrackerDto.ExpansionTracker);
         trackerSaved.Description.Should().BeEquivalentTo(createTrackerDto.Description);
         trackerSaved.Name.Should().BeEquivalentTo(createTrackerDto.Name);
     }
     
     [Test]
-    public async Task DeeteTracker()
+    public async Task DeleteTracker()
     {
         var expected = await GivenTracker();
         

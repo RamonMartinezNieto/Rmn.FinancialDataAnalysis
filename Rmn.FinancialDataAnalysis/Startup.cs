@@ -28,6 +28,9 @@ public class Startup
         services.AddTransient<ITrackerRepository, TrackerRepository>();
         services.AddTransient<ITrackerService, TrackerService>();
         
+        services.AddTransient<TrackerMapper>();
+        services.AddTransient<ExpansionMapper>();
+        
         services.AddHttpClient<IExpansionHistoricService, ExpansionHistoricService>()
             .ConfigureHttpClient((sp, client) =>
             {

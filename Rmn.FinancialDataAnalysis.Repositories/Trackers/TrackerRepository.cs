@@ -1,8 +1,8 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Rmn.FinancialDataAnalysis.Business.Trackers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Rmn.FinancialDataAnalysis.Business.Trackers;
 using Rmn.FinancialDataAnalysis.Business.Trackers.Models;
 
 namespace Rmn.FinancialDataAnalysis.Repositories.Trackers;
